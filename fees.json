@@ -1,0 +1,145 @@
+{
+    "fees": [
+        {
+            "category": "import_or_distribution",
+            "description": "5.1. Evaluare eliberare/reinnoire/modificare aviz de functionare prin adaugare activitate de import dispozitive medicale sau prin adaugare activitate de distributie dispozitive medicale pentru:",
+            "thresholds": [
+                {
+                    "max_producers": 10,
+                    "description": "a) 1 - 10 producatori",
+                    "fee": 1634
+                },
+                {
+                    "max_producers": 30,
+                    "description": "b) 11 - 30 producatori",
+                    "fee": 1910
+                },
+                {
+                    "max_producers": 50,
+                    "description": "c) 31 - 50 producatori",
+                    "fee": 2186
+                },
+                {
+                    "max_producers": 100,
+                    "description": "d) 51 - 100 producatori",
+                    "fee": 2462
+                },
+                {
+                    "max_producers": null,
+                    "description": "e) mai mult de 100 de producatori ",
+                    "fee": 2892
+                }
+            ]
+        },
+        {
+            "category": "Service",
+            "description": "5.2. Evaluare eliberare/reinnoire/modificare aviz de functionare prin adaugare activitate de instalare si/sau mentenanta dispozitive medicale pentru:",
+            "thresholds": [
+                {
+                    "max_groups": 10,
+                    "description": "a) 1 - 10 grupe de dispozitive ",
+                    "fee": 1833
+                },
+                {
+                    "max_groups": 30,
+                    "description": "b) 11 - 30 grupe de dispozitive ",
+                    "fee": 2098
+                },
+                {
+                    "max_groups": 50,
+                    "description": "c) 31 - 50 grupe de dispozitive",
+                    "fee": 2374
+                },
+                {
+                    "max_groups": null,
+                    "description": "d) mai mult de 50 de grupe de dispozitive",
+                    "fee": 2561
+                }
+            ]
+        },
+        {
+            "category": "add_workplace",
+            "description": "5.3. Evaluare modificare aviz de functionare prin adaugare punct de lucru",
+            "fee": 1093
+        },
+        {
+            "category": "change_name_or_address",
+            "description": "Evaluare schimbare denumire operator economic/schimbare adresa sediu social nelucrativ",
+            "fee": 364
+        },
+        {
+            "category": "add_producers",
+            "description": "5.5. Evaluare modificare aviz prin adaugare de producatori pentru care operatorul economic are calitatea de importator/distribuitor/reprezentant autorizat in Uniunea Europeana, pentru un numar de:",
+            "thresholds": [
+                {
+                    "max_producers": 10,
+                    "description": "a) 1 - 10 producatori ",
+                    "fee": 541
+                },
+                {
+                    "max_producers": 30,
+                    "description": "b) 11 - 30 producatori ",
+                    "fee": 1148
+                },
+                {
+                    "max_producers": null,
+                    "description": "c) mai mult de 30 de producatori ",
+                    "fee": 1943
+                }
+            ]
+        },
+        {
+            "category": "remove_producers_and_workplace",
+            "description": "5.6. Evaluare radiere producatori pentru care operatorul economic a avut calitatea de importator/distribuitor/reprezentant autorizat in Uniunea Europeana si radiere punct de lucru",
+            "fee": 44
+        },
+        {
+            "category": "issue_permit_or_annex",
+            "description": "5.7. Emitere aviz de functionare/anexa la avizul de functionare",
+            "fee": 342
+        },
+        {
+            "category": "issue_original_document",
+            "description": "5.8. Eliberarea la cererea solicitantului a unui document original",
+            "fee": 44
+        }
+    ],
+    "Additional rules": [
+        {   
+            "rule": "multiple_activities_discount",
+            "multiplier": 0.5,
+            "description": "Art. 6(3) Pentru solicitantii care desfasoara mai multe activitati, incepand cu cea de-a doua activitate se percepe 50% din tariful aplicat primei activitati."
+        },
+        {   
+            "rule": "multiple_workplaces_discount",
+            "description":"Art. 6(4)  Pentru solicitantii cu mai multe puncte de lucru care desfasoara aceeasi activitate, incepand cu cel de-al doilea punct de lucru se percepe 50% din tariful aplicat primului punct de lucru, mentionat pe aceeasi cerere. Pentru mai mult de 10 puncte de lucru, incepand cu cel de-al 11-lea punct de lucru, se percepe 25% din tariful aplicat primului punct de lucru mentionat pe aceeasi cerere.",
+            "tresholds": [
+                {
+                    "max_workplaces": 10,
+                    "description": "a) Puncte de lucru tarifate 50%",
+                    "multiplier": 0.5
+                },
+                {
+                    "max_workplaces": null,
+                    "description": "b) Puncte de lucru tarifate 25%",
+                    "multiplier": 0.25
+                }
+            ]
+        },
+        {
+            "rule": "unfavorable_review_fee",
+            "description": "Art. 6(5) Tariful pentru reevaluarea activitatii in cazul unui raport de evaluare nefavorabil este de 50% din tariful de baza stabilit pentru evaluare.",
+            "multiplier": 0.5
+        },
+        {   
+            "rule": "single_import_fee",
+            "description": "Art. 6(6) Activitatea de import se tarifeaza o singura data.",
+            "state": true
+        },
+        {   
+            "rule": "additional_evaluation_fee",
+            "description": "Art. 6(7) Dupa doua reevaluari efectuate ca urmare a adresei de solicitari de completari netarifate, orice noua reevaluare impune o noua tarifare in cuantum de 50% din tariful initial.",
+            "multiplier": 0.5
+        }
+    ]
+}
